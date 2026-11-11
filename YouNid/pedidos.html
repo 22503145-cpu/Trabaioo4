@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus pedidos - YouNid</title>
+  <link rel="icon" href="img/LogoYouNid.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/pedidos.css">
+</head>
+<body onload="mostrarPedidos()">
+
+  <header class="cabecalho">
+    <div class="container nav">
+      <a href="index.html"><img src="img/LogoYouNid.png" alt="YouNid" class="logo"></a>
+      <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Cardápio</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="pedidos.html" class="ativo">Pedidos</a>
+        <a href="perfil.html">Perfil</a>
+      </nav>
+      <form class="busca" action="produtos.html">
+        <input type="search" name="busca" placeholder="Buscar pratos..." maxlength="40">
+      </form>
+      <div class="acoes">
+        <button class="icone" onclick="trocarTema()" title="Modo claro/escuro">🌓</button>
+        <a href="cadastro.html#login" class="btn btn-contorno">Entrar</a>
+        <a href="cadastro.html" class="btn btn-laranja">Cadastrar</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="titulo-pagina">
+      <h1>Meus pedidos</h1>
+      <p>Veja os pedidos que você já fez.</p>
+    </div>
+
+    <input type="search" id="buscaPedidos" class="campo-busca" placeholder="Buscar pelo número do pedido ou nome do prato..." maxlength="30" oninput="mostrarPedidos()">
+
+    <div id="listaPedidos"></div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <div>
+        <img src="img/LogoYouNid.png" alt="YouNid" class="logo logo-rodape">
+        <p>Comida japonesa feita na hora e entregue na sua porta.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Cardápio</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="pedidos.html">Pedidos</a>
+      </div>
+      <div>
+        <h4>Horário</h4>
+        <p>Seg a Sáb: 11h às 23h</p>
+        <p>Domingo: 12h às 22h</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p>📍 Rua do Cotemig, 999 - CEP 99999-999</p>
+        <p>📞 (99) 99999-9999</p>
+        <p>✉️ contato@younid.com.br</p>
+      </div>
+    </div>
+    <p class="direitos">© 2026 YouNid Delivery - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

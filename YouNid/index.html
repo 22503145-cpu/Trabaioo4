@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouNid - Delivery de Comida Japonesa</title>
+  <link rel="icon" href="img/LogoYouNid.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="container nav">
+      <a href="index.html"><img src="img/LogoYouNid.png" alt="YouNid" class="logo"></a>
+      <nav class="menu">
+        <a href="index.html" class="ativo">Início</a>
+        <a href="produtos.html">Cardápio</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="perfil.html">Perfil</a>
+      </nav>
+      <form class="busca" action="produtos.html">
+        <input type="search" name="busca" placeholder="Buscar pratos..." maxlength="40">
+      </form>
+      <div class="acoes">
+        <button class="icone" onclick="trocarTema()" title="Modo claro/escuro">🌓</button>
+        <a href="cadastro.html#login" class="btn btn-contorno">Entrar</a>
+        <a href="cadastro.html" class="btn btn-laranja">Cadastrar</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="selo">Peixe fresco todos os dias</span>
+        <h1>O sabor do Japão <span>na sua porta</span> em 30 minutos.</h1>
+        <p>Na YouNid cada peça é preparada na hora. Peça sushis, temakis, lámens e combinados com poucos cliques e acompanhe seu pedido.</p>
+        <div class="hero-botoes">
+          <a href="produtos.html" class="btn btn-laranja">Ver cardápio</a>
+          <a href="cadastro.html" class="btn btn-contorno">Criar conta grátis</a>
+        </div>
+      </div>
+      <div class="hero-foto">
+        <img src="img/pratos/destaque.jpg" alt="Prato com vários sushis">
+      </div>
+    </section>
+
+    <h2 class="titulo-secao">Escolha uma <span>categoria</span></h2>
+    <div class="categorias">
+      <a href="produtos.html#sushi" class="categoria">
+        <img src="img/pratos/1.jpg" alt="Sushis">
+        <span>Sushis</span>
+      </a>
+      <a href="produtos.html#sashimi" class="categoria">
+        <img src="img/pratos/5.jpg" alt="Sashimis">
+        <span>Sashimis</span>
+      </a>
+      <a href="produtos.html#temaki" class="categoria">
+        <img src="img/pratos/7.jpg" alt="Temakis">
+        <span>Temakis</span>
+      </a>
+      <a href="produtos.html#hot" class="categoria">
+        <img src="img/pratos/10.jpg" alt="Hot e Fritos">
+        <span>Hot e Fritos</span>
+      </a>
+      <a href="produtos.html#quentes" class="categoria">
+        <img src="img/pratos/13.jpg" alt="Pratos Quentes">
+        <span>Pratos Quentes</span>
+      </a>
+      <a href="produtos.html#combinados" class="categoria">
+        <img src="img/pratos/17.jpg" alt="Combinados">
+        <span>Combinados</span>
+      </a>
+      <a href="produtos.html#sobremesas" class="categoria">
+        <img src="img/pratos/20.jpg" alt="Sobremesas">
+        <span>Sobremesas</span>
+      </a>
+      <a href="produtos.html#bebidas" class="categoria">
+        <img src="img/pratos/23.jpg" alt="Bebidas">
+        <span>Bebidas</span>
+      </a>
+    </div>
+
+    <h2 class="titulo-secao">Mais <span>pedidos</span></h2>
+    <div class="grade">
+      <div class="card">
+        <img src="img/pratos/2.jpg" alt="Uramaki Filadélfia">
+        <div class="card-info">
+          <h3>Uramaki Filadélfia</h3>
+          <p>8 peças com salmão, cream cheese e cebolinha.</p>
+          <div class="card-rodape">
+            <strong>R$ 32,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Uramaki Filadélfia', 32.90, 'img/pratos/2.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/10.jpg" alt="Hot Roll Filadélfia">
+        <div class="card-info">
+          <h3>Hot Roll Filadélfia</h3>
+          <p>10 peças empanadas e fritas, com molho tarê.</p>
+          <div class="card-rodape">
+            <strong>R$ 34,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Hot Roll Filadélfia', 34.90, 'img/pratos/10.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/7.jpg" alt="Temaki Salmão Completo">
+        <div class="card-info">
+          <h3>Temaki Salmão Completo</h3>
+          <p>Cone de alga com salmão, cream cheese e cebolinha.</p>
+          <div class="card-rodape">
+            <strong>R$ 29,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Temaki Salmão Completo', 29.90, 'img/pratos/7.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/13.jpg" alt="Lámen Tonkotsu">
+        <div class="card-info">
+          <h3>Lámen Tonkotsu</h3>
+          <p>Caldo cremoso de porco, chashu, ovo marinado e nori.</p>
+          <div class="card-rodape">
+            <strong>R$ 48,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Lámen Tonkotsu', 48.90, 'img/pratos/13.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="titulo-secao">Como <span>funciona</span></h2>
+    <div class="passos">
+      <div class="passo"><b>1</b><h3>Escolha seus pratos</h3><p>Navegue pelo cardápio ou use a busca para encontrar o que deseja.</p></div>
+      <div class="passo"><b>2</b><h3>Preparamos na hora</h3><p>Nossos sushimen preparam tudo no momento do pedido.</p></div>
+      <div class="passo"><b>3</b><h3>Receba em casa</h3><p>Acompanhe seus pedidos até eles chegarem na sua porta.</p></div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <div>
+        <img src="img/LogoYouNid.png" alt="YouNid" class="logo logo-rodape">
+        <p>Comida japonesa feita na hora e entregue na sua porta.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Cardápio</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="pedidos.html">Pedidos</a>
+      </div>
+      <div>
+        <h4>Horário</h4>
+        <p>Seg a Sáb: 11h às 23h</p>
+        <p>Domingo: 12h às 22h</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p>📍 Rua do Cotemig, 999 - CEP 99999-999</p>
+        <p>📞 (99) 99999-9999</p>
+        <p>✉️ contato@younid.com.br</p>
+      </div>
+    </div>
+    <p class="direitos">© 2026 YouNid Delivery - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

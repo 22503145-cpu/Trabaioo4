@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu perfil - YouNid</title>
+  <link rel="icon" href="img/LogoYouNid.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body onload="carregarPerfil()">
+
+  <header class="cabecalho">
+    <div class="container nav">
+      <a href="index.html"><img src="img/LogoYouNid.png" alt="YouNid" class="logo"></a>
+      <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Cardápio</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="perfil.html" class="ativo">Perfil</a>
+      </nav>
+      <form class="busca" action="produtos.html">
+        <input type="search" name="busca" placeholder="Buscar pratos..." maxlength="40">
+      </form>
+      <div class="acoes">
+        <button class="icone" onclick="trocarTema()" title="Modo claro/escuro">🌓</button>
+        <a href="cadastro.html#login" class="btn btn-contorno">Entrar</a>
+        <a href="cadastro.html" class="btn btn-laranja">Cadastrar</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="titulo-pagina">
+      <h1>Meu perfil</h1>
+      <p>Veja e altere seus dados.</p>
+    </div>
+
+    <div id="perfil" class="perfil">
+      <div class="caixa perfil-cartao">
+        <div class="avatar">👤</div>
+        <h3 id="nomeUsuario"></h3>
+        <p id="emailUsuario"></p>
+        <button class="btn btn-escuro btn-cheio" onclick="sair()">Sair da conta</button>
+      </div>
+
+      <form class="caixa formulario" onsubmit="salvarPerfil(event)">
+        <h3>Dados pessoais</h3>
+
+      <div class="campo metade">
+        <label for="nome">Nome completo *</label>
+        <input id="nome" type="text" maxlength="60" minlength="3" placeholder="Ex.: Ana Souza" oninput="somenteLetras(this)" required>
+      </div>
+
+      <div class="campo metade">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" disabled>
+      </div>
+
+      <div class="campo">
+        <label for="cpf">CPF</label>
+        <input id="cpf" type="text" disabled>
+      </div>
+
+      <div class="campo">
+        <label for="telefone">Celular *</label>
+        <input id="telefone" type="text" maxlength="15" placeholder="(00) 00000-0000" inputmode="numeric" pattern="\(\d{2}\) \d{4,5}-\d{4}" title="Digite o celular completo" oninput="mascaraTelefone(this)" required>
+      </div>
+
+      <div class="campo metade">
+        <label for="nascimento">Data de nascimento *</label>
+        <input id="nascimento" type="text" maxlength="10" placeholder="DD/MM/AAAA" inputmode="numeric" pattern="\d{2}/\d{2}/\d{4}" title="Digite a data completa" oninput="mascaraData(this)" required>
+      </div>
+
+        <h3>Endereço</h3>
+
+      <div class="campo">
+        <label for="cep">CEP *</label>
+        <input id="cep" type="text" maxlength="9" placeholder="00000-000" inputmode="numeric" pattern="\d{5}-\d{3}" title="Digite o CEP completo" oninput="mascaraCEP(this)" required>
+      </div>
+
+      <div class="campo metade">
+        <label for="rua">Rua *</label>
+        <input id="rua" type="text" maxlength="80" placeholder="Nome da rua" required>
+      </div>
+
+      <div class="campo">
+        <label for="numero">Número *</label>
+        <input id="numero" type="text" maxlength="6" placeholder="123" inputmode="numeric" oninput="somenteNumeros(this)" required>
+      </div>
+
+      <div class="campo">
+        <label for="complemento">Complemento</label>
+        <input id="complemento" type="text" maxlength="40" placeholder="Apto, bloco...">
+      </div>
+
+      <div class="campo">
+        <label for="bairro">Bairro *</label>
+        <input id="bairro" type="text" maxlength="50" placeholder="Bairro" required>
+      </div>
+
+      <div class="campo">
+        <label for="cidade">Cidade *</label>
+        <input id="cidade" type="text" maxlength="50" placeholder="Cidade" oninput="somenteLetras(this)" required>
+      </div>
+
+      <div class="campo">
+        <label for="uf">Estado (UF) *</label>
+        <input id="uf" type="text" maxlength="2" minlength="2" placeholder="SP" oninput="somenteLetras(this)" style="text-transform: uppercase" required>
+      </div>
+
+        <div class="campo inteiro">
+          <button type="submit" class="btn btn-laranja">Salvar alterações</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <div>
+        <img src="img/LogoYouNid.png" alt="YouNid" class="logo logo-rodape">
+        <p>Comida japonesa feita na hora e entregue na sua porta.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Cardápio</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="pedidos.html">Pedidos</a>
+      </div>
+      <div>
+        <h4>Horário</h4>
+        <p>Seg a Sáb: 11h às 23h</p>
+        <p>Domingo: 12h às 22h</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p>📍 Rua do Cotemig, 999 - CEP 99999-999</p>
+        <p>📞 (99) 99999-9999</p>
+        <p>✉️ contato@younid.com.br</p>
+      </div>
+    </div>
+    <p class="direitos">© 2026 YouNid Delivery - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

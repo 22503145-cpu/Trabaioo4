@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho - YouNid</title>
+  <link rel="icon" href="img/LogoYouNid.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/carrinho.css">
+</head>
+<body onload="mostrarCarrinho()">
+
+  <header class="cabecalho">
+    <div class="container nav">
+      <a href="index.html"><img src="img/LogoYouNid.png" alt="YouNid" class="logo"></a>
+      <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Cardápio</a>
+        <a href="carrinho.html" class="ativo">Carrinho</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="perfil.html">Perfil</a>
+      </nav>
+      <form class="busca" action="produtos.html">
+        <input type="search" name="busca" placeholder="Buscar pratos..." maxlength="40">
+      </form>
+      <div class="acoes">
+        <button class="icone" onclick="trocarTema()" title="Modo claro/escuro">🌓</button>
+        <a href="cadastro.html#login" class="btn btn-contorno">Entrar</a>
+        <a href="cadastro.html" class="btn btn-laranja">Cadastrar</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="titulo-pagina">
+      <h1>Carrinho</h1>
+    </div>
+
+    <div class="carrinho">
+      <div class="caixa">
+        <h3>Itens do pedido</h3>
+        <div id="itensCarrinho"></div>
+      </div>
+
+      <div class="carrinho-lado">
+        <div class="caixa">
+          <h3>Endereço de entrega</h3>
+          <p id="endereco"></p>
+        </div>
+
+        <div class="caixa">
+          <h3>Pagamento</h3>
+          <div class="pagamento">
+            <label><input type="radio" name="pagamento" value="Pix" checked> Pix</label>
+            <label><input type="radio" name="pagamento" value="Cartão"> Cartão</label>
+            <label><input type="radio" name="pagamento" value="Dinheiro"> Dinheiro</label>
+          </div>
+          <p class="total"><span>Total</span><span id="total">R$ 0,00</span></p>
+          <button class="btn btn-laranja btn-cheio" onclick="finalizarPedido()">Finalizar pedido</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <div>
+        <img src="img/LogoYouNid.png" alt="YouNid" class="logo logo-rodape">
+        <p>Comida japonesa feita na hora e entregue na sua porta.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Cardápio</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="pedidos.html">Pedidos</a>
+      </div>
+      <div>
+        <h4>Horário</h4>
+        <p>Seg a Sáb: 11h às 23h</p>
+        <p>Domingo: 12h às 22h</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p>📍 Rua do Cotemig, 999 - CEP 99999-999</p>
+        <p>📞 (99) 99999-9999</p>
+        <p>✉️ contato@younid.com.br</p>
+      </div>
+    </div>
+    <p class="direitos">© 2026 YouNid Delivery - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

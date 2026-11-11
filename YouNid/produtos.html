@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio - YouNid</title>
+  <link rel="icon" href="img/LogoYouNid.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="css/produtos.css">
+</head>
+<body onload="iniciarCardapio()">
+
+  <header class="cabecalho">
+    <div class="container nav">
+      <a href="index.html"><img src="img/LogoYouNid.png" alt="YouNid" class="logo"></a>
+      <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="produtos.html" class="ativo">Cardápio</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="pedidos.html">Pedidos</a>
+        <a href="perfil.html">Perfil</a>
+      </nav>
+      <form class="busca" action="produtos.html">
+        <input type="search" name="busca" placeholder="Buscar pratos..." maxlength="40">
+      </form>
+      <div class="acoes">
+        <button class="icone" onclick="trocarTema()" title="Modo claro/escuro">🌓</button>
+        <a href="cadastro.html#login" class="btn btn-contorno">Entrar</a>
+        <a href="cadastro.html" class="btn btn-laranja">Cadastrar</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="titulo-pagina">
+      <h1>Cardápio</h1>
+      <p>Tudo preparado na hora, com ingredientes frescos.</p>
+    </div>
+
+    <input type="search" id="buscaPratos" class="campo-busca" placeholder="Buscar prato pelo nome..." maxlength="40" oninput="buscarPratos()">
+
+    <div class="filtros">
+      <a href="#sushi" class="filtro">Sushis</a>
+      <a href="#sashimi" class="filtro">Sashimis</a>
+      <a href="#temaki" class="filtro">Temakis</a>
+      <a href="#hot" class="filtro">Hot e Fritos</a>
+      <a href="#quentes" class="filtro">Pratos Quentes</a>
+      <a href="#combinados" class="filtro">Combinados</a>
+      <a href="#sobremesas" class="filtro">Sobremesas</a>
+      <a href="#bebidas" class="filtro">Bebidas</a>
+    </div>
+
+    <div class="grade">
+      <h2 class="titulo-categoria" id="sushi">Sushis</h2>
+      <div class="card">
+        <img src="img/pratos/1.jpg" alt="Niguiri de Salmão">
+        <div class="card-info">
+          <h3>Niguiri de Salmão</h3>
+          <p>4 unidades de arroz temperado com fatias de salmão fresco.</p>
+          <div class="card-rodape">
+            <strong>R$ 18,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Niguiri de Salmão', 18.90, 'img/pratos/1.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/2.jpg" alt="Uramaki Filadélfia">
+        <div class="card-info">
+          <h3>Uramaki Filadélfia</h3>
+          <p>8 peças com salmão, cream cheese e cebolinha.</p>
+          <div class="card-rodape">
+            <strong>R$ 32,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Uramaki Filadélfia', 32.90, 'img/pratos/2.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/3.jpg" alt="Hossomaki de Pepino">
+        <div class="card-info">
+          <h3>Hossomaki de Pepino</h3>
+          <p>8 peças finas de alga, arroz e pepino.</p>
+          <div class="card-rodape">
+            <strong>R$ 16,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Hossomaki de Pepino', 16.90, 'img/pratos/3.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/4.jpg" alt="Dragon Roll">
+        <div class="card-info">
+          <h3>Dragon Roll</h3>
+          <p>Camarão empanado por dentro, coberto com abacate e molho tarê.</p>
+          <div class="card-rodape">
+            <strong>R$ 44,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Dragon Roll', 44.90, 'img/pratos/4.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <h2 class="titulo-categoria" id="sashimi">Sashimis</h2>
+      <div class="card">
+        <img src="img/pratos/5.jpg" alt="Sashimi de Salmão">
+        <div class="card-info">
+          <h3>Sashimi de Salmão</h3>
+          <p>10 fatias de salmão fresco servidas com shoyu.</p>
+          <div class="card-rodape">
+            <strong>R$ 39,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Sashimi de Salmão', 39.90, 'img/pratos/5.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/6.jpg" alt="Sashimi de Atum">
+        <div class="card-info">
+          <h3>Sashimi de Atum</h3>
+          <p>10 fatias de atum vermelho selecionado.</p>
+          <div class="card-rodape">
+            <strong>R$ 46,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Sashimi de Atum', 46.90, 'img/pratos/6.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <h2 class="titulo-categoria" id="temaki">Temakis</h2>
+      <div class="card">
+        <img src="img/pratos/7.jpg" alt="Temaki Salmão Completo">
+        <div class="card-info">
+          <h3>Temaki Salmão Completo</h3>
+          <p>Cone de alga com salmão, cream cheese e cebolinha.</p>
+          <div class="card-rodape">
+            <strong>R$ 29,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Temaki Salmão Completo', 29.90, 'img/pratos/7.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/8.jpg" alt="Temaki Skin Picante">
+        <div class="card-info">
+          <h3>Temaki Skin Picante</h3>
+          <p>Pele de salmão crocante com molho picante da casa.</p>
+          <div class="card-rodape">
+            <strong>R$ 26,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Temaki Skin Picante', 26.90, 'img/pratos/8.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/9.jpg" alt="Temaki Vegano">
+        <div class="card-info">
+          <h3>Temaki Vegano</h3>
+          <p>Shiitake, abacate, pepino, alface e cenoura.</p>
+          <div class="card-rodape">
+            <strong>R$ 24,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Temaki Vegano', 24.90, 'img/pratos/9.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <h2 class="titulo-categoria" id="hot">Hot e Fritos</h2>
+      <div class="card">
+        <img src="img/pratos/10.jpg" alt="Hot Roll Filadélfia">
+        <div class="card-info">
+          <h3>Hot Roll Filadélfia</h3>
+          <p>10 peças empanadas e fritas, com molho tarê.</p>
+          <div class="card-rodape">
+            <strong>R$ 34,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Hot Roll Filadélfia', 34.90, 'img/pratos/10.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/11.jpg" alt="Ebi Tempurá">
+        <div class="card-info">
+          <h3>Ebi Tempurá</h3>
+          <p>6 camarões empanados em massa tempurá bem leve.</p>
+          <div class="card-rodape">
+            <strong>R$ 38,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Ebi Tempurá', 38.90, 'img/pratos/11.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/12.jpg" alt="Gyoza de Porco">
+        <div class="card-info">
+          <h3>Gyoza de Porco</h3>
+          <p>6 pastéis japoneses selados na chapa.</p>
+          <div class="card-rodape">
+            <strong>R$ 27,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Gyoza de Porco', 27.90, 'img/pratos/12.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <h2 class="titulo-categoria" id="quentes">Pratos Quentes</h2>
+      <div class="card">
+        <img src="img/pratos/13.jpg" alt="Lámen Tonkotsu">
+        <div class="card-info">
+          <h3>Lámen Tonkotsu</h3>
+          <p>Caldo cremoso de porco, chashu, ovo marinado e nori.</p>
+          <div class="card-rodape">
+            <strong>R$ 48,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Lámen Tonkotsu', 48.90, 'img/pratos/13.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/14.jpg" alt="Yakisoba Tradicional">
+        <div class="card-info">
+          <h3>Yakisoba Tradicional</h3>
+          <p>Macarrão com carne, frango e legumes ao molho especial.</p>
+          <div class="card-rodape">
+            <strong>R$ 39,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Yakisoba Tradicional', 39.90, 'img/pratos/14.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/15.jpg" alt="Lámen Picante">
+        <div class="card-info">
+          <h3>Lámen Picante</h3>
+          <p>Caldo de missô apimentado com carne moída e ovo.</p>
+          <div class="card-rodape">
+            <strong>R$ 49,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Lámen Picante', 49.90, 'img/pratos/15.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/16.jpg" alt="Salmão Teriyaki">
+        <div class="card-info">
+          <h3>Salmão Teriyaki</h3>
+          <p>Salmão grelhado com arroz gohan e molho teriyaki.</p>
+          <div class="card-rodape">
+            <strong>R$ 54,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Salmão Teriyaki', 54.90, 'img/pratos/16.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <h2 class="titulo-categoria" id="combinados">Combinados</h2>
+      <div class="card">
+        <img src="img/pratos/17.jpg" alt="Combo Iniciante (20 peças)">
+        <div class="card-info">
+          <h3>Combo Iniciante (20 peças)</h3>
+          <p>Niguiris, uramakis e hot rolls para começar bem.</p>
+          <div class="card-rodape">
+            <strong>R$ 69,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Combo Iniciante (20 peças)', 69.90, 'img/pratos/17.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/18.jpg" alt="Combo Samurai (40 peças)">
+        <div class="card-info">
+          <h3>Combo Samurai (40 peças)</h3>
+          <p>Seleção do sushiman. Serve 2 a 3 pessoas.</p>
+          <div class="card-rodape">
+            <strong>R$ 129,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Combo Samurai (40 peças)', 129.90, 'img/pratos/18.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/19.jpg" alt="Barca Shogun (70 peças)">
+        <div class="card-info">
+          <h3>Barca Shogun (70 peças)</h3>
+          <p>A barca completa da casa. Serve 4 a 5 pessoas.</p>
+          <div class="card-rodape">
+            <strong>R$ 219,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Barca Shogun (70 peças)', 219.90, 'img/pratos/19.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <h2 class="titulo-categoria" id="sobremesas">Sobremesas</h2>
+      <div class="card">
+        <img src="img/pratos/20.jpg" alt="Mochi de Morango">
+        <div class="card-info">
+          <h3>Mochi de Morango</h3>
+          <p>3 bolinhos de arroz recheados com morango.</p>
+          <div class="card-rodape">
+            <strong>R$ 19,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Mochi de Morango', 19.90, 'img/pratos/20.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/21.jpg" alt="Harumaki de Banana">
+        <div class="card-info">
+          <h3>Harumaki de Banana</h3>
+          <p>Rolinho crocante de banana com canela.</p>
+          <div class="card-rodape">
+            <strong>R$ 17,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Harumaki de Banana', 17.90, 'img/pratos/21.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/22.jpg" alt="Sorvete de Matchá">
+        <div class="card-info">
+          <h3>Sorvete de Matchá</h3>
+          <p>Sorvete artesanal de chá verde.</p>
+          <div class="card-rodape">
+            <strong>R$ 15,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Sorvete de Matchá', 15.90, 'img/pratos/22.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <h2 class="titulo-categoria" id="bebidas">Bebidas</h2>
+      <div class="card">
+        <img src="img/pratos/23.jpg" alt="Chá Verde">
+        <div class="card-info">
+          <h3>Chá Verde</h3>
+          <p>Chá verde tradicional, quente ou gelado. 400ml.</p>
+          <div class="card-rodape">
+            <strong>R$ 9,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Chá Verde', 9.90, 'img/pratos/23.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/24.jpg" alt="Ramune Original">
+        <div class="card-info">
+          <h3>Ramune Original</h3>
+          <p>Refrigerante japonês com bolinha de vidro. 200ml.</p>
+          <div class="card-rodape">
+            <strong>R$ 14,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Ramune Original', 14.90, 'img/pratos/24.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <img src="img/pratos/25.jpg" alt="Refrigerante Lata">
+        <div class="card-info">
+          <h3>Refrigerante Lata</h3>
+          <p>Coca-Cola, Guaraná ou Sprite. 350ml.</p>
+          <div class="card-rodape">
+            <strong>R$ 6,90</strong>
+            <button class="btn btn-laranja" onclick="adicionar('Refrigerante Lata', 6.90, 'img/pratos/25.jpg')">Adicionar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="vazio" id="nenhum">Nenhum prato encontrado.</p>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-grade">
+      <div>
+        <img src="img/LogoYouNid.png" alt="YouNid" class="logo logo-rodape">
+        <p>Comida japonesa feita na hora e entregue na sua porta.</p>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <a href="index.html">Início</a>
+        <a href="produtos.html">Cardápio</a>
+        <a href="carrinho.html">Carrinho</a>
+        <a href="pedidos.html">Pedidos</a>
+      </div>
+      <div>
+        <h4>Horário</h4>
+        <p>Seg a Sáb: 11h às 23h</p>
+        <p>Domingo: 12h às 22h</p>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <p>📍 Rua do Cotemig, 999 - CEP 99999-999</p>
+        <p>📞 (99) 99999-9999</p>
+        <p>✉️ contato@younid.com.br</p>
+      </div>
+    </div>
+    <p class="direitos">© 2026 YouNid Delivery - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
